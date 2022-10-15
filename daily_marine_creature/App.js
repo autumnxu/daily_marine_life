@@ -75,20 +75,15 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="Marine Creature Catologue">
+            Further detail on <Text style={styles.highlight}>marine creature</Text> 
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Donate by roundup">
+            Save the ocean everytime you make a purchase!
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
+          <Section title="Conservation Opportunity">
+            Read the docs to discover conservation opportunities
           </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
