@@ -1,4 +1,11 @@
-import React, { type PropsWithChildren } from 'react';
+import { addDays } from 'date-fns';
+import * as React from 'react';
+// import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+// import DatePicker from "react-datepicker";
+import moment from 'moment';
+import { Modes } from 'react-native-time-date-picker';
+import { TimeDatePicker } from 'react-native-time-date-picker';
+// import { DatePicker } from 'react-native-week-month-date-picker';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,8 +24,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
 const DailyCreatureScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  // const minDate = new Date();
+  // const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const now = moment().valueOf();
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -26,8 +37,21 @@ const DailyCreatureScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View />
-      <Text>whale</Text>
+      <TimeDatePicker
+        selectedDate={now}
+        onMonthYearChange={(month) => {
+          console.log("month: ", month);
+        }}
+        onSelectedChange={(selected) => {
+          console.log("selected: ", selected);
+        }}
+        onTimeChange={(time) => {
+          console.log("time: ", time);
+        }}
+      />
+      <View>
+        {/* <Text>whale</Text> */}
+      </View>
     </SafeAreaView>
   );
 };
