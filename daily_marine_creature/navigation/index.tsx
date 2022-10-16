@@ -3,7 +3,7 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/
 import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import IonIcons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { ColorSchemeName, Pressable, TabBarIOSItem, Text } from 'react-native';
 import HomeScreen from "../screens/homepage/HomepageScreen";
 import DailyCreatureScreen from "../screens/daily_creature_page/DailyCreatureScreen";
@@ -25,13 +25,13 @@ export default function Navigation() {
                         let iconName;
                         if (route.name == 'HomeStack') {
                             iconName = focused ? 'ios-home' : 'ios-home-outline'
-                            return <IonIcons name={ iconName } size={ size } color={color} />
+                            return <Icon name={ iconName } size={ size } color={color} />
                         } else if (route.name == 'DailyCreatureStack') {
                             iconName = focused ? 'file-tray-stacked-sharp': 'file-tray-stacked-outline'
-                            return <IonIcons name={ iconName } size={ size } color={color} />
+                            return <Icon name={ iconName } size={ size } color={color} />
                         } else if (route.name == 'OpportunityStack') {
                             iconName = focused ? 'ios-newspaper' : 'ios-newspaper-outline'
-                            return <IonIcons name={ iconName } size={ size } color={color} />
+                            return <Icon name={ iconName } size={ size } color={color} />
                     }
                     },
                     headerShown: false

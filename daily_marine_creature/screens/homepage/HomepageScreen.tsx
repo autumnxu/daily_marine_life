@@ -17,16 +17,56 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+
+const Section = ({children, title}) => {
+  const isDarkMode = useColorScheme() === 'dark';
+  return (
+    <View style={styles.sectionContainer}>
+      <Text
+        style={[
+          styles.sectionTitle,
+          {
+            color: isDarkMode ? Colors.white : Colors.black,
+          },
+        ]}>
+        {title}
+      </Text>
+      <Text
+        style={[
+          styles.sectionDescription,
+          {
+            color: isDarkMode ? Colors.light : Colors.dark,
+          },
+        ]}>
+        {children}
+      </Text>
+    </View>
+  );
+};
+
+
+
+
 const HomepageScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+  
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View />
+      <Section title="Marine Creature Catologue">
+            Further detail on <Text style={styles.highlight}>marine creature</Text> 
+          </Section>
+          <Section title="Donate by roundup">
+            Save the ocean everytime you make a purchase!
+          </Section>
+          <Section title="Conservation Opportunity">
+            Read the docs to discover conservation opportunities
+          </Section>
     </SafeAreaView>
   );
 };

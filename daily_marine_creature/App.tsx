@@ -81,6 +81,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -88,7 +89,7 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
+  Icon.loadFont();
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Navigation/>
