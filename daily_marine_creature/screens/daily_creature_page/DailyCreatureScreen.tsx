@@ -193,7 +193,8 @@ const DailyCreatureScreen = () => {
       set_creature_description(creature_data[selected_date].description)
       set_creature_photo(creature_data[selected_date].image + '_photo')
       set_creature_sound(creature_data[selected_date].image+'_sound');
-      var whoosh = new Sound('https://media.fisheries.noaa.gov/dam-migration/blue-whale.mp3??sign=1&si=zz543L5nwESTNGFR_pA5m3VKRGwrZkg3UURXQzg4V0Z5a2NmeU9TTDAzak8wTUNVc2RZV3JmRllFT1NZcXRlZnpTNkdMc3RsMitCWlVDejZ2bm10aVA2eVoreTBzUlRoa0lEdS84dGlaVmV0ZGRsZjluMTB0WUlFT1d0RTJwc2xHRHcvaHF2YjUvQXpTTnJjaHZJcGpZSkVNZm80NGNIVzIyajZqMU0wamlhREJpQlpTTzNIVmRMVHkzVkZwNHZHM3crSjBwRnhEMHVIVWVwVXBQRFlzWHNQUEtMOTBzTTlDbVBzYzJnMkZFUGg0bWkrTWJ2YVZXMkg&h=MWI1YmY3MmU1MjczMTA2ODgwMmVlZDdlMDljNjg3MGQ3OGYyYjIwYmQwOTk4MjlhNDU1NWZmMWUyODRmNTIxNQ',
+      if (creature_data[selected_date].name=="whale") {
+      var whoosh = new Sound('https://media.fisheries.noaa.gov/dam-migration/sei-whale.mp3??sign=1&si=zz543L5nwESTNGFR_pA5m3VKRGwrZkg3UURXQzg4V0Z5a2NmeU9TTDAzak8wTUNVc2RZV3JmRllFT1NZcXRlZnpTNkdMc3RsMitCWlVDejZ2bm10aVA2eVoreTBzUlRoa0lEdS84dGlaVmV0ZGRsZjluMTB0WUlFT1d0RTJwc2xHRHcvaHF2YjUvQXpTTnJjaHZJcGpZSkVNZm80NGNIVzIyajZqMU0wamlhREJpQlhRTzNIVmRMVHkzV28ra0JUTk5sREZRWkgzS3pwbDFSSDRVakV2VllmSjRGbWxwZTFnZnM2Zitsa3lSMEQwU0xKRmlENlBnS24&h=ZDA1ZGE5ZTc2OGRhNzI2MjE5ZDAwYmJlYTA1ZmIwYjBiODViNDlhMzVmYmI0MzQ5OGVmOGU2ZDJiZDE5NTYzOQ',
       null,  (error) => {
         console.log("entered")
         if (error) {
@@ -213,6 +214,7 @@ const DailyCreatureScreen = () => {
           }
         });
       });
+    }
       console.log(creature_image);
     }
   };
